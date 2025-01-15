@@ -23,6 +23,10 @@ jobs:
         run: |
           git config --global user.name "Subhadip-Hazra"  # Your GitHub username
           git config --global user.email "subhadiphazra722@gmail.com"  # Your GitHub email
+          
+          # Pull the latest changes from the remote repository
+          git pull https://Subhadip-Hazra:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Subhadip-Hazra/GITHUB-AUTOMATE.git main
+
           git add .
           git commit -m "Automated commit: $(date)" || echo "No changes to commit"  # Prevents errors if no changes
           git push https://Subhadip-Hazra:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Subhadip-Hazra/GITHUB-AUTOMATE.git || echo "Push failed"
